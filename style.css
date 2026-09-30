@@ -53,7 +53,7 @@ button { font: inherit; }
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  min-height: 70px;
+  min-height: 54px;
   padding: 0 clamp(1.25rem, 4vw, 4.5rem);
   border-bottom: 1px solid color-mix(in srgb, var(--rule) 72%, transparent);
   background: var(--header-bg);
@@ -91,11 +91,10 @@ button { font: inherit; }
 main { overflow: hidden; }
 .intro {
   position: relative;
-  min-height: 59vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: clamp(5rem, 12vh, 9rem) clamp(1.25rem, 7vw, 8rem) clamp(4rem, 9vh, 7rem);
+  padding: clamp(2.5rem, 6vh, 4rem) clamp(1.25rem, 5vw, 5rem) clamp(2rem, 4vh, 3rem);
   border-bottom: 1px solid var(--rule);
   background:
     radial-gradient(circle at 76% 32%, color-mix(in srgb, var(--accent) 15%, transparent), transparent 28%),
@@ -104,10 +103,10 @@ main { overflow: hidden; }
 .intro::after {
   content: "";
   position: absolute;
-  width: clamp(12rem, 30vw, 30rem);
+  width: clamp(8rem, 18vw, 16rem);
   aspect-ratio: 1;
-  right: clamp(-9rem, -6vw, -2rem);
-  top: clamp(3rem, 10vh, 7rem);
+  right: clamp(-5rem, -3vw, -1rem);
+  top: clamp(1rem, 4vh, 2.5rem);
   border: 1px solid var(--rule);
   border-radius: 50%;
   opacity: .55;
@@ -123,26 +122,26 @@ h1, h2, strong { font-family: "Newsreader", serif; }
 .eyebrow {
   position: relative;
   z-index: 2;
-  margin-bottom: clamp(2.25rem, 4vw, 4rem);
+  margin-bottom: clamp(1.25rem, 2.5vw, 1.75rem);
 }
 h1 {
   position: relative;
   z-index: 1;
   margin: 0;
   max-width: 7ch;
-  font-size: clamp(5.5rem, 17vw, 13rem);
+  font-size: clamp(3.5rem, 9vw, 6.5rem);
   font-weight: 300;
   line-height: .72;
   letter-spacing: -.055em;
 }
 .lede {
-  margin: clamp(2rem, 4vw, 3.5rem) 0 0;
+  margin: clamp(1rem, 2vw, 1.5rem) 0 0;
   color: var(--muted);
   font-size: clamp(.85rem, 1.1vw, 1rem);
 }
 .jump-link {
   width: max-content;
-  margin-top: 2rem;
+  margin-top: 1rem;
   padding-bottom: .35rem;
   border-bottom: 1px solid var(--ink);
   font-size: .72rem;
@@ -158,14 +157,14 @@ h1 {
 .group {
   display: grid;
   grid-template-columns: minmax(180px, .62fr) minmax(0, 1.6fr);
-  gap: clamp(2rem, 7vw, 7rem);
-  padding: clamp(4rem, 8vw, 7rem) 0;
+  gap: clamp(1.5rem, 5vw, 5rem);
+  padding: clamp(1.75rem, 3.5vw, 3rem) 0;
   border-bottom: 1px solid var(--rule);
 }
 .group-heading h2 {
   margin: 0;
   max-width: 9ch;
-  font-size: clamp(2.2rem, 4vw, 4rem);
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
   font-weight: 300;
   line-height: .94;
   letter-spacing: -.035em;
@@ -174,11 +173,10 @@ h1 {
 .card {
   position: relative;
   display: grid;
-  grid-template-columns: 3.5rem minmax(0, 1fr) auto;
+  grid-template-columns: 2.6rem minmax(0, 1fr) auto;
   align-items: center;
-  gap: 1.25rem;
-  min-height: 126px;
-  padding: 1.35rem .35rem;
+  gap: 1rem;
+  padding: .7rem .35rem;
   border-bottom: 1px solid var(--rule);
   text-decoration: none;
   transition: padding .2s ease, background .2s ease;
@@ -191,24 +189,24 @@ h1 {
 .card-mark {
   display: grid;
   place-items: center;
-  width: 3.25rem;
+  width: 2.4rem;
   aspect-ratio: 1;
   border: 1px solid var(--rule);
   border-radius: 50%;
   color: var(--accent);
-  font-size: .68rem;
+  font-size: .6rem;
   letter-spacing: .08em;
 }
-.card-copy { display: grid; gap: .38rem; }
+.card-copy { display: grid; gap: .2rem; }
 .card strong {
-  font-size: clamp(1.45rem, 2.4vw, 2rem);
+  font-size: clamp(1.2rem, 1.7vw, 1.45rem);
   font-weight: 400;
   line-height: 1;
 }
 .card-copy > span {
   color: var(--muted);
-  font-size: .7rem;
-  line-height: 1.55;
+  font-size: .72rem;
+  line-height: 1.45;
 }
 .arrow {
   color: var(--accent);
@@ -221,7 +219,7 @@ footer {
   display: flex;
   justify-content: space-between;
   gap: 2rem;
-  padding: 2.5rem clamp(1.25rem, 5vw, 5rem);
+  padding: 1.5rem clamp(1.25rem, 5vw, 5rem);
   color: var(--muted);
   font-size: .65rem;
 }
@@ -241,15 +239,16 @@ body[data-theme="dark"] {
 body[data-theme="dark"] .grain { opacity: .1; mix-blend-mode: screen; }
 
 @media (max-width: 720px) {
-  .site-header { min-height: 62px; }
+  .site-header { min-height: 52px; }
   .theme-button { padding: .38rem .55rem; font-size: .58rem; }
-  .intro { min-height: 52vh; }
-  .group { grid-template-columns: 1fr; gap: 2rem; }
+  .group { grid-template-columns: 1fr; gap: .9rem; }
   .group-heading h2 { max-width: none; }
-  .card { grid-template-columns: 2.9rem minmax(0, 1fr) auto; min-height: 110px; gap: .9rem; }
-  .card-mark { width: 2.7rem; }
-  .card strong { font-size: 1.35rem; }
-  footer { flex-direction: column; }
+  .card { grid-template-columns: 2.3rem minmax(0, 1fr) auto; gap: .8rem; }
+  .card-mark { width: 2.2rem; }
+  .card strong { font-size: 1.15rem; }
+  .group-heading { display: flex; align-items: baseline; gap: .75rem; }
+  .group-heading .group-number { margin: 0; }
+  footer { flex-direction: column; gap: .5rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
