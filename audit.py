@@ -28,6 +28,7 @@ assert page.h1 == 1
 assert all(reference in page.ids for reference in page.refs)
 external_links = [link for link in page.links if link.startswith("http")]
 expected_links = {
+    "https://brotatotes.github.io/how-a-watch-works/",
     "https://brotatotes.github.io/blade-on-the-beat/",
     "https://brotatotes.com/",
     "https://biblego.org/",
