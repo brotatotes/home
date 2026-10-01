@@ -251,6 +251,65 @@ body[data-theme="dark"] .grain { opacity: .1; mix-blend-mode: screen; }
   footer { flex-direction: column; gap: .5rem; }
 }
 
+/* Featured sites: compact two-column row */
+.group-main, .group-games { grid-template-columns: minmax(150px, .42fr) minmax(0, 1.8fr); }
+.feature-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 2rem;
+}
+.feature-row .card { align-items: start; }
+.feature-row .card-copy > span { font-size: .7rem; }
+.feature-row .arrow { align-self: center; }
+
+/* Games: dense tile grid */
+.games { display: grid; gap: 1rem; }
+.tile-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .75rem;
+  border-top: 0;
+}
+.card.tile {
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: .5rem;
+  padding: .85rem .9rem;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+}
+.card.tile:hover { padding: .85rem .9rem; border-color: var(--accent); }
+.card.tile .card-mark { display: none; }
+.card.tile strong { font-size: 1.12rem; }
+.card.tile .card-copy > span { font-size: .68rem; line-height: 1.4; }
+.card.tile .arrow { font-size: 1rem; }
+.js .tile-grid:not(.expanded) [data-extra] { display: none; }
+.show-all {
+  justify-self: start;
+  appearance: none;
+  border: 0;
+  border-bottom: 1px solid var(--ink);
+  padding: 0 0 .35rem;
+  background: transparent;
+  color: var(--ink);
+  font-size: .72rem;
+  cursor: pointer;
+}
+.show-all span { margin-left: .6rem; color: var(--accent); }
+.show-all:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+@media (max-width: 960px) {
+  .tile-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 720px) {
+  .group-main, .group-games { grid-template-columns: 1fr; }
+  .feature-row { grid-template-columns: 1fr; }
+  .tile-grid { gap: .55rem; }
+  .card.tile, .card.tile:hover { padding: .7rem .75rem; }
+  .card.tile strong { font-size: 1rem; }
+  .card.tile .card-copy > span { font-size: .64rem; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: .01ms !important; }

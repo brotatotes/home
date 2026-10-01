@@ -1,3 +1,5 @@
+document.documentElement.classList.add('js');
+
 const buttons = [...document.querySelectorAll('.theme-button')];
 const themeColor = document.querySelector('meta[name="theme-color"]');
 const systemDark = window.matchMedia('(prefers-color-scheme: dark)');
@@ -27,3 +29,15 @@ let saved = 'system';
 try { saved = localStorage.getItem('home-theme') || localStorage.getItem('atlas-theme') || 'system'; } catch (error) { /* optional */ }
 if (saved === 'atlas') saved = 'light';
 applyTheme(['system', 'light', 'dark'].includes(saved) ? saved : 'system');
+
+const gamesGrid = document.getElementById('games-grid');
+const showAll = document.querySelector('.show-all');
+if (gamesGrid && showAll && gamesGrid.querySelector('[data-extra]')) {
+  showAll.hidden = false;
+  const label = showAll.innerHTML;
+  showAll.addEventListener('click', () => {
+    const expanded = gamesGrid.classList.toggle('expanded');
+    showAll.setAttribute('aria-expanded', String(expanded));
+    showAll.innerHTML = expanded ? 'Show fewer <span aria-hidden="true">↑</span>' : label;
+  });
+}
