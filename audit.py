@@ -32,6 +32,7 @@ expected_links = {
     "https://brotatotes.github.io/songbook/",
     "https://brotatotes.github.io/chord-explorer/",
     "https://brotatotes.github.io/how-a-watch-works/",
+    "https://brotatotes.github.io/how-a-piano-works/",
     "https://brotatotes.github.io/blade-on-the-beat/",
     "https://brotatotes.com/",
     "https://biblego.org/",
